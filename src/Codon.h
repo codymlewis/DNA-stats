@@ -17,8 +17,7 @@ namespace DNA_sim {
       /* enum Base
        *  The invidual bases of mRNA
        */
-      enum Base { adenine, uracil, cytosine, guanine };
-      std::vector<Base> bases; // 3 bases per codon
+      std::string bases; // 3 bases per codon
     public:
       Codon(); // Default constructor
       Codon(std::string input); // Input constructor
@@ -29,10 +28,10 @@ namespace DNA_sim {
 
       // Mutators
       bool set_bases(std::string input);
-      // TODO: Add crossover
   };
   // Operator Overloads
   std::istream& operator>>(std::istream& in, Codon& cod); // input
   std::ostream& operator<<(std::ostream& out, const Codon& cod); // output
+  bool operator<(const Codon& lhs, const Codon& rhs);
 }
 #endif /* ifndef CODON_h */
